@@ -4,15 +4,14 @@ on:
   - push
 
 jobs: 
-    first_job:
-        name: jomacs-k8s 
+    first_job: 
         runs-on: ubuntu-latest
         steps:
-            - name: First Message
-              run: echo "Welcome to the world of CICD through Github Actions"
+            - name: Checkout Code
+              uses: actions/checkout@v4
 
-            - name: List all Files including Hidden 
-              run: ls -1a
-
-            - name: Show Present worling Directory
-              run: pwd
+            - name: List and Read files
+              run: |
+                echo "My first GitHub Actions Job"
+                ls -1
+                
